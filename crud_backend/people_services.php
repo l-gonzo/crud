@@ -12,7 +12,7 @@ class People_Services
         try {
             $stmt = $conn->connect()->prepare($query);
             $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC: devuelve un array indexado por los nombres de las columnas del conjunto de resultados
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
             return json_encode($result);
         } catch (PDOException $e) {
             echo "Error en la consulta: " . $e->getMessage();
